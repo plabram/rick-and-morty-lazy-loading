@@ -10,12 +10,11 @@ const totalCharactersFunc = async () => {
     const res = await fetch(characterURL);
     const response = await res.json();
     totalCharacters = response.info.count;
-    return totalCharacters;
   } catch (err) {
     console.log("Error asking API for total characters:", err);
   }
 };
-totalCharacters = await totalCharactersFunc();
+totalCharacters = totalCharactersFunc();
 
 const characterTemplate = (name, image, species) => {
   return `<div class="character">
